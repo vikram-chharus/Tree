@@ -1,0 +1,11 @@
+This is a brief description of the tree.
+/***********************************************************************/
+I'm creating a binary tree using c++ language 
+
+/***********************************************************************/
+*Features
+    *Can Add a Node at appropriate position automatically
+    *Can delete a Node or child or data from the tree 
+    *Can re-arrange itself to be again a binary tree ( ordered )
+    *Traversal :- inOrder, preOrder, postOrder, levelOrder
+    *Getting the lowest Ancestor of two children 
