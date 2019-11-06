@@ -1,6 +1,6 @@
 This is a brief description of the tree.
 /***********************************************************************/
-I'm creating a binary tree using c++ language 
+I'm creating a binary search tree(BST) using c++ language 
 
 /***********************************************************************/
 *Features
@@ -8,4 +8,7 @@ I'm creating a binary tree using c++ language
     *Can delete a Node or child or data from the tree 
     *Can re-arrange itself to be again a binary tree ( ordered )
     *Traversal :- inOrder, preOrder, postOrder, levelOrder
-    *Getting the lowest Ancestor of two children 
+    *search for a value if it is in the tree or not
+    *check wheather a child if left or right of it's parent
+    *replace a node's value with new value
+    *check wheather some node has left or right child or not
