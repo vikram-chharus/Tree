@@ -1,3 +1,20 @@
+int maximumValueInLeftSubTree(Node *parent)//return the largest value in the tree
+		{
+			int temp;//temp variable to store the value before deleting the node
+			if( hasRight() )//if it has right_child then
+			{
+				return right->maximumValueInLeftSubTree( this );//ask to right_child to return the value
+			}
+			else//if no more right_child then
+			{
+				temp = this->info;//store its value
+				delete this;//delete this node
+				parent->right = NULL;//and its parent's right_child to NULL as we have delete parent's right_child
+			}
+			return temp;//return the temp
+			//here we are not going in its left because we are storing the max value in the right_child in parent, left_child and right_child
+		}
+-------*********************************************************************************************************************************-----
 bool removeNode( int nodeValue, Node *parent)//this will remove the node who's value is 'nodeValue' and its parent is 'parent'
 		{
 			if( this->info == nodeValue )//if we found the node
