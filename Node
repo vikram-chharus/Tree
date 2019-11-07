@@ -1,0 +1,6 @@
+Node(int value)//normal constructor to initilise new node
+		{
+			this->left = NULL;//set left_child of node to NULL so that we can detact the end of the branch
+			this->info = value;//set value to the information of the node
+			this->right = NULL;//set right_child of node to NULL same as left_child
+		}
