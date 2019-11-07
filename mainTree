@@ -1,5 +1,6 @@
 #include<iostream>//for basic operators and reserved words
 #include<vector>//to use vector
+#include<queue>//to use queue DS
 class Node//single node the tree
 {
 	Node *left;//left_child
