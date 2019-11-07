@@ -1,0 +1,3 @@
+Node *left;//to store the left_child of the parent
+int info;//to store the information of the node
+Node *right;//to store the right_child of the parent
