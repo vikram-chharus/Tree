@@ -1,0 +1,22 @@
+bool hasLeft()//returns true if a node has its left child otherwise false
+		{
+			if( this->left != NULL )//if node's left_child is not set to NULL then return true
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		bool hasRight()//returns true if a node has its right child otherwise false
+		{
+			if( this->right != NULL )//if right_child of node is not set to NULL then return true
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
