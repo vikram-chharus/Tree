@@ -1,0 +1,22 @@
+bool isLeft(Node *child)//this can be use as to detact some 'child' to check wheather it is the the left_child of the some another node
+		{
+			if( child == left)//if passed ( argument ) child is same as the node's left_child then return true means it is the left of this
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
+		bool isRight(Node *child)//check wheather it is right_child of this node or not
+		{
+			if( child == right)
+			{
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}
