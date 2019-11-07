@@ -1,0 +1,30 @@
+bool replace( int oldValue, int newValue )//change the old value of node with new value if old value is present in the tree
+		{
+			if( this->info == oldValue )
+			{
+				this->info = newValue;
+				return true;
+			}
+			else
+			{
+				if( this->info > oldValue )
+				{
+					left->replace( oldValue, newValue );
+				}
+				else
+				{
+					return false;
+				}
+				if( this->info < oldValue )
+				{
+					if( hasRight() )
+					{
+						right->replace( oldValue, newValue );
+					}
+					else
+					{
+						return false;
+					}
+				}
+			}
+		}
