@@ -1,0 +1,14 @@
+std::vector<int>& inOrder()//returns a vector that has values of the tree in in-order sequence(Left -> Parent -> Right)
+		{
+			static std::vector <int> inOrderValues;
+			if( hasLeft() )
+			{
+				left->inOrder();
+			}
+			inOrderValues.push_back( this->info );
+			if( hasRight() )
+			{
+				right->inOrder();
+			}
+			return inOrderValues;
+		}
