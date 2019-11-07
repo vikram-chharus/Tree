@@ -1,0 +1,25 @@
+void addNode( int value )//use this function to append the tree family in auto arrange format
+		{
+			if( value < this->info )//if new node value is smaller than the parent node then
+			{
+				if( hasLeft() )//check if it has a left_child or not if yes
+				{
+					left->addNode( value );//then ask its left_child to add this new node in its family
+				}
+				else//otherwise 
+				{
+					left = new Node( value );//add this new node as its left_child
+				}
+			}
+			else if ( value > this->info )//if new node value is greater than the parent node then
+			{
+				if( hasRight() )//check if it has right_child or not if yes
+				{
+					right->addNode( value );//then ask its right_child to add this new node its family
+				}
+				else//otherwise 
+				{
+					right = new Node( value );//add this new node as its right_child
+				}
+			}
+		}
