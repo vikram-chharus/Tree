@@ -1,0 +1,86 @@
+bool removeNode( int nodeValue, Node *parent)//this will remove the node who's value is 'nodeValue' and its parent is 'parent'
+		{
+			if( this->info == nodeValue )//if we found the node
+			{
+				bool isLeftChild = parent->isLeft( this );//store if it is the left child of its parent
+				bool isRightChild = parent->isRight( this );//store if it is the right child of its parent
+				//we can have 3 cases while deleting a node from a BST tree
+				//Case 1: when the deleting node has no further child
+				if( !hasLeft() && !hasRight() )//check for no right and left child if has no child
+				{
+					if ( isLeftChild )//if it is left_child of its parent then
+					{
+						parent->left = NULL;//set parent left to NULL as we need to change the end of tree
+						delete this;//now delete this node
+						//order of setting parent's left and deleting the node can be any
+					}
+					else if ( isRightChild )//if it is the right_child of parent
+					{
+						parent->right = NULL;//set parent's right_child to NULL
+						delete this;//delete this node
+					}
+				}
+				//Case 2: one child ( Any of left or right )
+				else if( ( hasLeft() && !hasRight() ) || ( !hasLeft() && hasRight() ) )//if it has one child
+				{
+					if( isLeftChild )//if this is the left child of its parent then
+					{
+						if( hasLeft() )//check if this node has left child or not if yes then
+						{
+							parent->left = this->left;//set parent's left child to this node's left child and
+							delete this;//delete this node
+						}
+						else if( hasRight() )//check if this node has right child if yes then
+						{
+							parent->left = this->right;//set parent's left child to this node right child
+							delete this;//delete this node
+						}
+					}
+					else if( isRightChild )//if this is the right child of its parent then
+					{
+						if( hasLeft() )//check if this node has left child or not if yes then
+						{
+							parent->right = this->left;//set parent's right child to this node's left child and
+							delete this;//delete this node
+						}
+						else if( hasRight() )//check if this node has right child if yes then
+						{
+							parent->right = this->right;//set parent's right child to this node right child
+							delete this;//delete this node
+						}
+					}
+				}
+				//Case 3: Two children
+				else if( hasLeft() && hasRight() )//check if this node has left_child as well as right child
+				{
+					this->info = left->maximumValueInLeftSubTree( this );//get the largest value if its left_child's family
+					//and set to this node value and we have deleted the old node that had this largest value
+					//in this way we have deleted a node and still managed the tree structure while deleting the node in between
+				}
+			}
+			else//if we still not found out node then
+			{
+				if( nodeValue < this->info )//if this node's value is greater than the will deleted node's value
+				{
+					if( hasLeft() )//check if it has left child or not if yes then
+					{
+						left->removeNode( nodeValue, this );//ask its left_child to delete the node
+					}
+					else//otherwise
+					{
+						return false;//return false
+					}
+				}
+				else if( nodeValue > this->info )//if this node's value is smaller than the will deleted node's value
+				{
+					if( hasRight() )//check if it has right_child or not if yes
+					{
+						right->removeNode( nodeValue, this );//then ask its right child to delete the node
+					}
+					else//otherwise return false as we did'nt find the node we wanted to delete
+					{
+						return false;
+					}
+				}
+			}
+		}
