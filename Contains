@@ -1,0 +1,33 @@
+bool contain( int value )//this function returns true if the passed 'value' is present in the tree otherwise false
+		{
+			//searching process
+			if( this->info == value )//if this node's value is same as the passed value then
+			{
+				return true;//return true
+			}
+			else//otherwise
+			{
+				if( this->info > value )//if 'value' is smaller than the node value then it may be present in its left sub tree
+				{
+					if( hasLeft() )//if it has further left child then
+					{
+						left->contain( value );//ask its left child to search the value
+					}
+					else//otherwise the value is not present in the tree
+					{
+						return false;//hence return false
+					}
+				}
+				else if( this->info < value )//if the value is greater than the node then
+				{
+					if( hasRight() )//check if it has any right_child or not if yes then
+					{
+						right->contain( value );//ask its right_child to search for the value
+					}
+					else//otherwise the value is not present in the tree as there is no more right child
+					{
+						return false;//return false
+					}
+				}
+			}
+		}
