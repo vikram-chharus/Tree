@@ -1,0 +1,21 @@
+std::vector<int>& levelOrder()//returns a vector that has values of the tree in level-order sequence or Breadth first Search
+		{
+			static std::queue<Node*> nextNodes;//you can use vector as well insted of queue
+			static std::vector<int> levelOrderValues;
+			levelOrderValues.push_back(this->info);
+			if( hasLeft() )
+			{
+				nextNodes.push( left );
+			}
+			if( hasRight() )
+			{
+				nextNodes.push( right );
+			}
+			if( nextNodes.size() != 0 )
+			{
+				Node *t = nextNodes.front();
+				nextNodes.pop();
+				t->levelOrder();
+			}
+			return levelOrderValues;
+		}
