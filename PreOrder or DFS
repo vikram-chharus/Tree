@@ -1,0 +1,14 @@
+std::vector<int>& preOrder()//returns a vector that has values of the tree in pre-order sequence(Parent -> Left -> Right)
+		{
+			static std::vector <int> preOrderValues;//to store the preorder
+			preOrderValues.push_back( this->info );//push the parent into vector
+			if( hasLeft() )//if it has left_child then
+			{
+				left->preOrder();//ask left child for preorder
+			}
+			if( hasRight() )//if it has right child then
+			{
+				right->preOrder();//ask right child for preorder
+			}
+			return preOrderValues;//at last return the preOrderValues that we have stored
+		}
