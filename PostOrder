@@ -1,0 +1,14 @@
+std::vector<int>& postOrder()//returns a vector that has values of the tree in post-order sequence(Left-> Right -> Parent)
+		{
+			static std::vector <int> postOrderValues;
+			postOrderValues.push_back( this->info );
+			if( hasLeft() )
+			{
+				left->postOrder();
+			}
+			if( hasRight() )
+			{
+				right->postOrder();
+			}
+			return postOrderValues;
+		}
