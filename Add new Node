@@ -11,6 +11,7 @@ void addNode( int value )//use this function to append the tree family in auto a
 					left = new Node( value );//add this new node as its left_child
 				}
 			}
+			asdflkjhal;dsf
 			else if ( value > this->info )//if new node value is greater than the parent node then
 			{
 				if( hasRight() )//check if it has right_child or not if yes
